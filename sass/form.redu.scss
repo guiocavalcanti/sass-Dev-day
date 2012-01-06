@@ -1,0 +1,169 @@
+@import "compass";
+
+$gray2: rgb(240, 240, 240);
+$gray3: rgb(230, 230, 230);
+$gray4: rgb(204, 204, 204);
+$gray5: rgb(179, 179, 179);
+$blue1: rgb(219, 239, 247);
+$blue2: rgb(115, 195, 230);
+$blue3: rgb(77, 173, 214);
+$blue4: rgb(21, 138, 196);
+$red1: rgb(255, 109, 109);
+$red2: rgb(232, 59, 59);
+$red3: rgb(225, 39, 45);
+$red4: rgb(193, 39, 45);
+
+body { font-family: arial, sans-serif;
+font-size: 12px;
+}
+
+ul {
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+}
+
+input[type=submit] { margin: 0; }
+
+a {
+  text-decoration: none;
+}
+
+.concave-form {
+  .concave-label {
+    font-weight: bold;
+    color: $gray5;
+    width: 120px;
+    float: left;
+    clear: left;
+    margin-top: 20px;
+    margin-right: 15px;
+    padding-top: 7px;
+    text-align: right;
+
+    .snippet {
+      font-size: 10px;
+      font-style: italic;
+      font-weight: normal;
+      display: block;
+    }
+  }
+
+  .single-column,
+  .columns {
+    margin-top: 20px;
+    float: left;
+
+    .concave-label {
+      font-weight: normal;
+      float: none;
+    }
+  }
+  .columns {
+    width: 151px * 3;
+
+    li {
+      float: left;
+      width: 150px;
+    }
+  }
+
+  .concave-input {
+    .cssgradients & {
+      @include background-image(linear-gradient($gray2, white));
+    }
+
+    .borderradius & {
+      @include border-radius(3px);
+    }
+
+    padding: 7px 10px;
+    width: 416px;
+    color: $gray5;
+    font-size: 11px;
+    font-style: italic;
+    border: solid 1px $gray4;
+    float: left;
+    margin-top: 20px;
+  }
+
+  .tip {
+    display: block;
+    clear: left;
+    font-size: 11px;
+    margin-left: 135px;
+    margin-top: 5px;
+    color: $gray5;
+  }
+
+  .concave-separator {
+    clear: both;
+    border: none;
+    border-top: dotted 1px $gray4;
+    margin-bottom: 20px;
+  }
+
+  .concave-button,
+  .concave-clean,
+  .concave-remove {
+    padding: 8px 25px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  .concave-button {
+    color: white;
+    background-color: $blue3;
+    &:hover { background-color: $blue4; }
+
+    .borderradius & { @include border-radius(3px); }
+    .cssgradients & {
+      @include background-image(linear-gradient($blue2, $blue3));
+      &:hover { @include background-image(linear-gradient($blue2, $blue4)); }
+    }
+    .textshadow & { @include single-text-shadow($blue4, 0, -1px, 0); }
+
+    border: solid 1px $blue3;
+    float: right;
+    &:hover { border: solid 1px $blue4; }
+  }
+
+  .concave-clean {
+    color: $blue3;
+    background-color: $gray3;
+    &:hover { background-color: $blue1; }
+
+    .borderradius & { @include border-radius(3px); }
+    .cssgradients & {
+      @include background-image(linear-gradient(white, $gray3));
+      &:hover { @include background-image(linear-gradient(white, $blue1)); }
+    }
+
+
+    .textshadow & { @include single-text-shadow(white, 0, 1px, 0); }
+
+    border: solid 1px $gray4;
+    float: right;
+    margin-right: 5px;
+    &:hover { border: solid 1px $blue1; }
+  }
+
+  .concave-remove {
+    color: white;
+    background-color: $red1;
+    &:hover { background-color: $red2; }
+
+    .borderradius & { @include border-radius(3px); }
+    .cssgradients & {
+      @include background-image(linear-gradient($red1, $red2));
+      &:hover { @include background-image(linear-gradient($red1, $red3)); }
+    }
+
+    .textshadow & { @include single-text-shadow($red4, 0, -1px, 0); }
+
+    float: left;
+    border: solid 1px $red2;
+    &:hover { border: solid 1px $red3; }
+  }
+
+}
